@@ -64,7 +64,7 @@ export async function GET(
     .replace(/\s+/g, "-")
   const filename = `${safeTitle || "cv"}.pdf`
 
-  return new NextResponse(buffer, {
+  return new NextResponse(Buffer.from(buffer), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `attachment; filename="${filename}"`,
