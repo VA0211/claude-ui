@@ -57,7 +57,7 @@ export async function GET(
     component = createElement(ClassicTemplate, { data: cvData })
   }
 
-  const buffer = await renderToBuffer(component)
+  const buffer = await renderToBuffer(component as React.ReactElement<any>)
 
   const safeTitle = cv.title
     .replace(/[^a-zA-Z0-9\s]/g, "")
